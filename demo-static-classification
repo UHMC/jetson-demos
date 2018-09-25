@@ -1,0 +1,16 @@
+#!/bin/bash
+DIR=/home/nvidia/jetson-inference/build/aarch64/bin
+ELF=imagenet-console
+INPUT=$DIR/orange_0.jpg
+OUTPUT=$(pwd)/$(basename $0)_output.jpg
+if [[ $1 != "" ]]; then
+	INPUT=$1
+	if [[ $2 != "" ]]; then
+		OUTPUT=$(pwd)/$2
+	fi
+fi
+eog $INPUT &
+cd $DIR
+./$ELF $INPUT $OUTPUT
+cd $OLDPWD
+eog $OUTPUT &
