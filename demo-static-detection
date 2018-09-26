@@ -11,6 +11,6 @@ if [[ $1 != "" ]]; then
 fi
 eog $INPUT &
 cd $DIR
-./$ELF $INPUT $OUTPUT
+./$ELF $INPUT $OUTPUT coco-dog
 cd $OLDPWD
 eog $OUTPUT &
