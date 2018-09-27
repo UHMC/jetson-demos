@@ -1,0 +1,11 @@
+#!/bin/bash
+DIR=/home/nvidia/jetson-inference-extcam/build/aarch64/bin
+ELF=segnet-camera
+OUTPUT=$(pwd)/$(basename $0)_output
+if [[ $1 != "" ]]; then
+	OUTPUT=$(pwd)/$1
+fi
+sudo ~/jetson_clocks.sh
+cd $DIR
+./$ELF > $OUTPUT
+cd $OLDPWD
