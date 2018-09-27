@@ -1,6 +1,7 @@
 #!/bin/bash
 DIR=/home/nvidia/jetson-inference/build/aarch64/bin
 ELF=detectnet-console
+NETSPEC=coco-dog
 INPUT=$DIR/dog_0.jpg
 OUTPUT=$(pwd)/$(basename $0)_output.jpg
 if [[ $1 != "" ]]; then
@@ -11,6 +12,6 @@ if [[ $1 != "" ]]; then
 fi
 eog $INPUT &
 cd $DIR
-./$ELF $INPUT $OUTPUT coco-dog
+./$ELF $INPUT $OUTPUT $NETSPEC
 cd $OLDPWD
 eog $OUTPUT &
