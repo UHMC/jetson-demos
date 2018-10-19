@@ -50,18 +50,18 @@ rm *output*
 # 	sleep $DELAY
 # done
 # rm *output*
-NETSPEC=facenet
-INPUT=$(ls | grep peds-001)
-for i in $INPUT; do
-	OUTPUT=~/output_$(basename $i)
-	eog $i &
-	cd $DIR
-	./$ELF $i $OUTPUT $NETSPEC
-	cd $OLDPWD
-	eog $OUTPUT &
-	sleep $DELAY
-done
-rm *output*
+# NETSPEC=facenet
+# INPUT=$(ls | grep peds-001)
+# for i in $INPUT; do
+# 	OUTPUT=~/output_$(basename $i)
+# 	eog $i &
+# 	cd $DIR
+# 	./$ELF $i $OUTPUT $NETSPEC
+# 	cd $OLDPWD
+# 	eog $OUTPUT &
+# 	sleep $DELAY
+# done
+# rm *output*
 NETSPEC=multiped
 INPUT=$(ls | grep peds)
 for i in $INPUT; do
