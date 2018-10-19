@@ -1,0 +1,76 @@
+#!/bin/bash
+DELAY=5
+DIR=/home/nvidia/jetson-inference/build/aarch64/bin
+ELF=detectnet-console
+NETSPEC=coco-airplane
+INPUT=$(ls | grep airplane)
+for i in $INPUT; do
+	OUTPUT=~/output_$(basename $i)
+	eog $i &
+	cd $DIR
+	./$ELF $i $OUTPUT $NETSPEC
+	cd $OLDPWD
+	eog $OUTPUT &
+	sleep $DELAY
+done
+rm *output*
+NETSPEC=coco-bottle
+INPUT=$(ls | grep bottle)
+for i in $INPUT; do
+	OUTPUT=~/output_$(basename $i)
+	eog $i &
+	cd $DIR
+	./$ELF $i $OUTPUT $NETSPEC
+	cd $OLDPWD
+	eog $OUTPUT &
+	sleep $DELAY
+done
+rm *output*
+NETSPEC=coco-dog
+INPUT=$(ls | grep dog)
+for i in $INPUT; do
+	OUTPUT=~/output_$(basename $i)
+	eog $i &
+	cd $DIR
+	./$ELF $i $OUTPUT $NETSPEC
+	cd $OLDPWD
+	eog $OUTPUT &
+	sleep $DELAY
+done
+rm *output*
+NETSPEC=pednet
+INPUT=$(ls | grep peds)
+for i in $INPUT; do
+	OUTPUT=~/output_$(basename $i)
+	eog $i &
+	cd $DIR
+	./$ELF $i $OUTPUT $NETSPEC
+	cd $OLDPWD
+	eog $OUTPUT &
+	sleep $DELAY
+done
+rm *output*
+NETSPEC=multiped
+INPUT=$(ls | grep peds)
+for i in $INPUT; do
+	OUTPUT=~/output_$(basename $i)
+	eog $i &
+	cd $DIR
+	./$ELF $i $OUTPUT $NETSPEC
+	cd $OLDPWD
+	eog $OUTPUT &
+	sleep $DELAY
+done
+rm *output*
+NETSPEC=facenet
+INPUT=$(ls | grep peds)
+for i in $INPUT; do
+	OUTPUT=~/output_$(basename $i)
+	eog $i &
+	cd $DIR
+	./$ELF $i $OUTPUT $NETSPEC
+	cd $OLDPWD
+	eog $OUTPUT &
+	sleep $DELAY
+done
+rm *output*
