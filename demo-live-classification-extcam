@@ -2,7 +2,7 @@
 DIR=/home/nvidia/jetson-inference-extcam/build/aarch64/bin
 ELF=imagenet-camera\ googlenet
 OUTPUT=$(pwd)/$(basename $0)_output
-if [[ $1 != "" ]]; then
+if [[ -n $1 ]]; then
 	OUTPUT=$(pwd)/$1
 fi
 sudo ~/jetson_clocks.sh

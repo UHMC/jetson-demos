@@ -4,9 +4,9 @@ ELF=detectnet-console
 NETSPEC=coco-dog
 INPUT=$DIR/dog_0.jpg
 OUTPUT=$(pwd)/$(basename $0)_output.jpg
-if [[ $1 != "" ]]; then
+if [[ -n $1 ]]; then
 	INPUT=$1
-	if [[ $2 != "" ]]; then
+	if [[ -n $2 ]]; then
 		OUTPUT=$(pwd)/$2
 	fi
 fi

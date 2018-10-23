@@ -3,9 +3,9 @@ DIR=/home/nvidia/jetson-inference/build/aarch64/bin
 ELF=segnet-console
 INPUT=$DIR/drone_0428.png
 OUTPUT=$(pwd)/$(basename $0)_output.png
-if [[ $1 != "" ]]; then
+if [[ -n $1 ]]; then
 	INPUT=$1
-	if [[ $2 != "" ]]; then
+	if [[ -n $2 ]]; then
 		OUTPUT=$(pwd)/$2
 	fi
 fi
